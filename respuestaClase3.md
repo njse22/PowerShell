@@ -6,7 +6,8 @@ Ejercicios clase 4:
 
 ## **Respuesta:**
 
-``
+```console
+
   New-Item -ItemType File texto1.txt
   New-Item -ItemType File texto2.txt
   notepad texto1.txt
