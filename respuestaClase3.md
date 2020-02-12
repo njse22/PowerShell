@@ -12,4 +12,10 @@ Ejercicios clase 4:
   New-Item -ItemType File texto2.txt
   notepad texto1.txt
   notepad texto2.txt
-``  
+  diff -Ref (cat .\texto1.txt) -Diff (cat .\texto2.txt)
+
+  InputObject         SideIndicator
+  -----------         -------------
+  archivo 2 el malo   =>           
+  archivo 1 el bueno  <=           
+```  
