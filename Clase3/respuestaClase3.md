@@ -12,6 +12,14 @@ Ejercicios clase 4:
   New-Item -ItemType File texto2.txt
   notepad texto1.txt
   notepad texto2.txt
+  cat ./texto1.txt
+  Nicolas Javier Salazar Echeverry 
+  Sistemas Operacionales 
+  archivo 1 el bueno 
+  cat ./texto2.txt
+  Nicolas Javier Salazar Echeverry 
+  Sistemas Operacionales 
+  archivo 2 el malo 
   diff -Ref (cat .\texto1.txt) -Diff (cat .\texto2.txt)
 
   InputObject         SideIndicator
