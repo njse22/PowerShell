@@ -92,10 +92,49 @@ se utiliza el siguiente comando:
    listas. En Windows en inglés, el separador de listas es la coma (,).
    Cómo se le dice a ``Export-CSV`` que emplee el separador del sistema en lugar
    de la coma?
-6. Identifique un cmdlet que permita generar un número aleatorio.
-7. Identifique un cmdlet que despliegue la fecha y hora actuales.
-8. Qué tipo de objeto produce el cmdlet de la pregunta 7?
-9. Usando el cmdlet de la pregunta 7 y ``select-object``, despliegue solamente
+
+
+**6.** Identifique un cmdlet que permita generar un número aleatorio.
+
+**Respuesta:**
+el comando random genera un número aleatorio 
+
+```powershell
+	random
+	433184730
+	random
+	1019773911
+```
+
+
+**7.** Identifique un cmdlet que despliegue la fecha y hora actuales.
+
+**Respuesta:**
+
+```powershell
+	date
+	sábado, 15 de febrero de 2020 1:57:54 p. m.
+```
+
+**8.** Qué tipo de objeto produce el cmdlet de la pregunta 7?
+
+**Respuesta:**
+el objeto producido por el comando de la pregunta 7 en un ``DateTime``
+
+```powershell 	
+date | gm
+
+
+   TypeName: System.DateTime
+
+Name                 MemberType     Definition                                                           
+----                 ----------     ----------                                                           
+Add                  Method         datetime Add(timespan value)                                         
+AddDays              Method         datetime AddDays(double value)              
+```
+
+
+**9.** Usando el cmdlet de la pregunta 7 y ``select-object``, despliegue solamente
    el día de la semana, así:
 
 ```console
@@ -104,17 +143,71 @@ se utiliza el siguiente comando:
     Thursday
 ```
 
-10. Identifique un cmdlet que muestre información acerca de parches (hotfixes)
-    instalados en el sistema.
-11. Empleando el cmdlet de la pregunta 10, muestre una lista de parches
+**Respuesta:**
+
+la siguiente linea de comando da el resultado pedido 
+
+```powershell
+	date | Select-Object DayOfWeek
+
+	DayOfWeek
+	---------
+ 	Saturday
+ ```
+
+
+**10.** Identifique un cmdlet que muestre información acerca de parches (hotfixes)    instalados en el sistema.
+
+**Respuesta:**
+
+el comando ``Get-HotFix`` retorna los hotfixes instalados en el sistema
+
+```powershell
+Get-HotFix
+
+Source        Description      HotFixID      InstalledBy          InstalledOn              
+------        -----------      --------      -----------          -----------              
+DESKTOP-O7... Update           KB4534131     NT AUTHORITY\SYSTEM  12/02/2020 12:00:00 a. m.
+DESKTOP-O7... Update           KB4462930     NT AUTHORITY\SYSTEM  4/02/2020 12:00:00 a. m. 
+DESKTOP-O7... Update           KB4465065     NT AUTHORITY\SYSTEM  4/02/2020 12:00:00 a. m. 
+DESKTOP-O7... Update           KB4486153     NT AUTHORITY\SYSTEM  4/02/2020 12:00:00 a. m. 
+DESKTOP-O7... Security Update  KB4516115     NT AUTHORITY\SYSTEM  4/02/2020 12:00:00 a. m. 
+DESKTOP-O7... Security Update  KB4523204     NT AUTHORITY\SYSTEM  4/02/2020 12:00:00 a. m. 
+DESKTOP-O7... Security Update  KB4524244     NT AUTHORITY\SYSTEM  12/02/2020 12:00:00 a. m.
+DESKTOP-O7... Security Update  KB4537759     NT AUTHORITY\SYSTEM  12/02/2020 12:00:00 a. m.
+DESKTOP-O7... Security Update  KB4532691     NT AUTHORITY\SYSTEM  12/02/2020 12:00:00 a. m.
+```
+
+**11.** Empleando el cmdlet de la pregunta 10, muestre una lista de parches
     instalados. Luego extienda la expresión para ordenar la lista por fecha
     de instalación, y muestre en pantalla únicamente la fecha de instalación,
     el usuario que instaló el parche, y el ID del parche. Recuerde examinar
     los nombres de las propiedades.
+
+**Respuesta:**
+
+```powershell
+
+Get-HotFix | Select-Object InstalledOn,InstalledBy,HotFixID | Sort-Object -Property InstalledOn
+
+InstalledOn               InstalledBy         HotFixID 
+-----------               -----------         -------- 
+4/02/2020 12:00:00 a. m.  NT AUTHORITY\SYSTEM KB4462930
+4/02/2020 12:00:00 a. m.  NT AUTHORITY\SYSTEM KB4465065
+4/02/2020 12:00:00 a. m.  NT AUTHORITY\SYSTEM KB4486153
+4/02/2020 12:00:00 a. m.  NT AUTHORITY\SYSTEM KB4516115
+4/02/2020 12:00:00 a. m.  NT AUTHORITY\SYSTEM KB4523204
+12/02/2020 12:00:00 a. m. NT AUTHORITY\SYSTEM KB4534131
+12/02/2020 12:00:00 a. m. NT AUTHORITY\SYSTEM KB4524244
+12/02/2020 12:00:00 a. m. NT AUTHORITY\SYSTEM KB4537759
+12/02/2020 12:00:00 a. m. NT AUTHORITY\SYSTEM KB4532691
+```
+
 12. Complemente la solución a la pregunta 11, para que el sistema ordene los
     resultados por la descripción del parche, e incluya en el listado la
     descripción, el ID del parche, y la fecha de instalación.
     Escriba los resultados a un archivo HTML.
+
 13. Muestre una lista de las 50 entradas más nuevas del log de eventos System.
     Ordene la lista de modo que las entradas más antiguas aparezcan primero;
     las entradas producidas al mismo tiempo deben ordenarse por número índice.
