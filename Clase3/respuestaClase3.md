@@ -8,7 +8,7 @@ Ejercicios clase 3:
 
 **Respuesta:**
 
-```console
+```powershell
 
   New-Item -ItemType File texto1.txt
   New-Item -ItemType File texto2.txt
@@ -54,7 +54,7 @@ la salida del comando anterior es:
 
 ```
 
-porque el parametro ```powershell out-file ``` esta esperando que le sea especificado un archivo 
+porque el parametro `` out-file `` esta esperando que le sea especificado un archivo 
 
 si por ejemplo escribieramos el comando de la siguiente forma: 
 
