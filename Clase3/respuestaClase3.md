@@ -88,11 +88,29 @@ se utiliza el siguiente comando:
    sobreescritura de un archivo existente? Existe algún parámetro que
    permita que el comando pregunte antes de sobresscribir un archivo?
 
-5. Windows emplea configuraciones regionales, lo que incluye el separador de
+**5.** Windows emplea configuraciones regionales, lo que incluye el separador de
    listas. En Windows en inglés, el separador de listas es la coma (,).
    Cómo se le dice a ``Export-CSV`` que emplee el separador del sistema en lugar
    de la coma?
 
+**Respuesta:**
+```powershell
+Get-Process |Export-Csv servicios4.csv -Delimiter ((Get-Culture).TextInfo.ListSeparator)
+
+cat .\servicios4.csv
+
+#TYPE System.Diagnostics.Process
+"Name";"SI";"Handles";"VM";"WS";"PM";"NPM";"Path";"Company";"CPU";"FileVersion";"ProductVersion";"Descript
+ion";"Product";"__NounName";"BasePriority";"ExitCode";"HasExited";"ExitTime";"Handle";"SafeHandle";"Handle
+Count";"Id";"MachineName";"MainWindowHandle";"MainWindowTitle";"MainModule";"MaxWorkingSet";"MinWorkingSet
+";"Modules";"NonpagedSystemMemorySize";"NonpagedSystemMemorySize64";"PagedMemorySize";"PagedMemorySize64";
+"PagedSystemMemorySize";"PagedSystemMemorySize64";"PeakPagedMemorySize";"PeakPagedMemorySize64";"PeakWorki
+ngSet";"PeakWorkingSet64";"PeakVirtualMemorySize";"PeakVirtualMemorySize64";"PriorityBoostEnabled";"Priori
+tyClass";"PrivateMemorySize";"PrivateMemorySize64";"PrivilegedProcessorTime";"ProcessName";"ProcessorAffin
+ity";"Responding";"SessionId";"StartInfo";"StartTime";"SynchronizingObject";"Threads";"TotalProcessorTime"
+;"UserProcessorTime";"VirtualMemorySize";"VirtualMemorySize64";"EnableRaisingEvents";"StandardInput";"Stan
+dardOutput";"StandardError";"WorkingSet";"WorkingSet64";"Site";"Container"
+```
 
 **6.** Identifique un cmdlet que permita generar un número aleatorio.
 
@@ -203,14 +221,92 @@ InstalledOn               InstalledBy         HotFixID
 12/02/2020 12:00:00 a. m. NT AUTHORITY\SYSTEM KB4532691
 ```
 
-12. Complemente la solución a la pregunta 11, para que el sistema ordene los
+**12.** Complemente la solución a la pregunta 11, para que el sistema ordene los
     resultados por la descripción del parche, e incluya en el listado la
     descripción, el ID del parche, y la fecha de instalación.
     Escriba los resultados a un archivo HTML.
 
-13. Muestre una lista de las 50 entradas más nuevas del log de eventos System.
+**Respuesta:**
+
+```powershell
+Get-HotFix | Select-Object -Property InstalledOn, InstalledBy, HotfixID | Sort-Object -Property InstalledOn
+
+InstalledOn               InstalledBy         HotfixID 
+-----------               -----------         -------- 
+4/02/2020 12:00:00 a. m.  NT AUTHORITY\SYSTEM KB4462930
+4/02/2020 12:00:00 a. m.  NT AUTHORITY\SYSTEM KB4465065
+4/02/2020 12:00:00 a. m.  NT AUTHORITY\SYSTEM KB4486153
+4/02/2020 12:00:00 a. m.  NT AUTHORITY\SYSTEM KB4516115
+4/02/2020 12:00:00 a. m.  NT AUTHORITY\SYSTEM KB4523204
+12/02/2020 12:00:00 a. m. NT AUTHORITY\SYSTEM KB4534131
+12/02/2020 12:00:00 a. m. NT AUTHORITY\SYSTEM KB4524244
+12/02/2020 12:00:00 a. m. NT AUTHORITY\SYSTEM KB4537759
+12/02/2020 12:00:00 a. m. NT AUTHORITY\SYSTEM KB4532691
+```
+
+**13.** Muestre una lista de las 50 entradas más nuevas del log de eventos System.
     Ordene la lista de modo que las entradas más antiguas aparezcan primero;
     las entradas producidas al mismo tiempo deben ordenarse por número índice.
     Muestre el número índice, la hora y la fuente para cada entrada. Escriba
     esta información en un archivo de texto plano.
 
+**Respuesta:**
+
+```powershell
+Get-EventLog -LogName System -Newest 50 | Select-Object -Property Index, TimeGenerated, Source | Sort-Object -Property TimeGenerated, Index > eventLog.txt
+
+cat .\eventLog.txt
+
+Index TimeGenerated            Source                               
+----- -------------            ------                               
+ 1457 19/02/2020 4:47:06 p. m. Microsoft-Windows-Kernel-General     
+ 1458 19/02/2020 4:47:07 p. m. Microsoft-Windows-Kernel-General     
+ 1459 19/02/2020 4:47:07 p. m. Microsoft-Windows-Kernel-General     
+ 1460 19/02/2020 4:47:07 p. m. Microsoft-Windows-Dhcp-Client        
+ 1461 19/02/2020 4:47:07 p. m. Microsoft-Windows-Dhcp-Client        
+ 1462 19/02/2020 4:47:07 p. m. Microsoft-Windows-DHCPv6-Client      
+ 1463 19/02/2020 4:47:08 p. m. Microsoft-Windows-FilterManager      
+ 1464 19/02/2020 4:47:08 p. m. Microsoft-Windows-FilterManager      
+ 1465 19/02/2020 4:47:08 p. m. Microsoft-Windows-FilterManager      
+ 1466 19/02/2020 4:47:08 p. m. Microsoft-Windows-FilterManager      
+ 1467 19/02/2020 4:47:08 p. m. Microsoft-Windows-FilterManager      
+ 1468 19/02/2020 4:47:08 p. m. Microsoft-Windows-FilterManager      
+ 1469 19/02/2020 4:47:11 p. m. Service Control Manager              
+ 1470 19/02/2020 4:47:19 p. m. Microsoft-Windows-Kernel-General     
+ 1471 19/02/2020 4:47:49 p. m. Microsoft-Windows-Kernel-General     
+ 1472 19/02/2020 4:47:57 p. m. Microsoft-Windows-Winlogon           
+ 1474 19/02/2020 4:47:57 p. m. Microsoft-Windows-Kernel-General     
+ 1473 19/02/2020 4:47:58 p. m. Kerberos                             
+ 1475 19/02/2020 4:47:58 p. m. Microsoft-Windows-Kernel-General     
+ 1476 19/02/2020 4:48:06 p. m. DCOM                                 
+ 1477 19/02/2020 4:48:06 p. m. DCOM                                 
+ 1478 19/02/2020 4:48:30 p. m. Microsoft-Windows-Kernel-General     
+ 1479 19/02/2020 4:48:37 p. m. Microsoft-Windows-Kernel-General     
+ 1480 19/02/2020 4:48:40 p. m. Microsoft-Windows-Kernel-General     
+ 1481 19/02/2020 4:48:44 p. m. Microsoft-Windows-Kernel-General     
+ 1482 19/02/2020 4:48:51 p. m. Microsoft-Windows-Kernel-General     
+ 1483 19/02/2020 4:49:07 p. m. Microsoft-Windows-Kernel-General     
+ 1484 19/02/2020 4:49:54 p. m. Microsoft-Windows-Kernel-General     
+ 1485 19/02/2020 4:49:55 p. m. Microsoft-Windows-Kernel-General     
+ 1486 19/02/2020 4:50:30 p. m. DCOM                                 
+ 1487 19/02/2020 4:50:30 p. m. DCOM                                 
+ 1488 19/02/2020 4:50:30 p. m. DCOM                                 
+ 1489 19/02/2020 4:50:31 p. m. Microsoft-Windows-Kernel-General     
+ 1490 19/02/2020 4:50:41 p. m. Microsoft-Windows-Kernel-General     
+ 1491 19/02/2020 4:50:42 p. m. Microsoft-Windows-Kernel-General     
+ 1492 19/02/2020 4:50:42 p. m. Microsoft-Windows-Kernel-General     
+ 1493 19/02/2020 4:50:42 p. m. Microsoft-Windows-FilterManager      
+ 1494 19/02/2020 4:52:40 p. m. Service Control Manager              
+ 1495 19/02/2020 4:52:42 p. m. Microsoft-Windows-WindowsUpdateClient
+ 1496 19/02/2020 4:52:50 p. m. Microsoft-Windows-WindowsUpdateClient
+ 1497 19/02/2020 4:52:55 p. m. Microsoft-Windows-WindowsUpdateClient
+ 1498 19/02/2020 4:53:22 p. m. Microsoft-Windows-WindowsUpdateClient
+ 1499 19/02/2020 4:53:22 p. m. Microsoft-Windows-Kernel-General     
+ 1500 19/02/2020 4:53:38 p. m. Microsoft-Windows-Kernel-General     
+ 1501 19/02/2020 4:58:44 p. m. Microsoft-Windows-Kernel-General     
+ 1502 19/02/2020 4:59:19 p. m. Microsoft-Windows-Kernel-Power       
+ 1503 19/02/2020 4:59:42 p. m. Microsoft-Windows-Kernel-General     
+ 1504 19/02/2020 4:59:50 p. m. Microsoft-Windows-Kernel-General     
+ 1505 19/02/2020 4:59:52 p. m. Microsoft-Windows-WindowsUpdateClient
+ 1506 19/02/2020 5:00:02 p. m. Microsoft-Windows-WindowsUpdateClient
+```
