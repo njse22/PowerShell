@@ -7,4 +7,4 @@ el enlace al repositorio con el material del curso [aquí](https://github.com/jm
 
 - Respuestas preguntas clase 4 [aquí](Clase4/respuestaClase4.md)
 
-- Respuestas preguntas clase 5 [aquí](Clase5/respuestaClase5.md)
+- Respuestas preguntas clase 5 [aquí](Clase5/respuestasClase5.md)
