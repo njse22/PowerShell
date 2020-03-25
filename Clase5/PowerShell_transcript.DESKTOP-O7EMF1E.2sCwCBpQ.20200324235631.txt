@@ -1,0 +1,199 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20200324235631
+Nombre de usuario: ACADEMICO\1144202885
+Usuario RunAs: ACADEMICO\1144202885
+Nombre de la configuración: 
+Máquina: DESKTOP-O7EMF1E (Microsoft Windows NT 10.0.17763.0)
+Aplicación host: C:\Windows\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Id. de proceso: 4960
+PSVersion: 5.1.17763.1007
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.1007
+BuildVersion: 10.0.17763.1007
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+La transcripción ha comenzado. El archivo de salida es C:\Users\1144202885\Documents\PowerShell_transcript.DESKTOP-O7EMF1E.2sCwCBpQ.20200324235631.txt
+PS C:\Users\1144202885\Documents> cd ..
+PS C:\Users\1144202885> ls 
+
+
+    Directorio: C:\Users\1144202885
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-r---    15/03/2020  10:21 a. m.                3D Objects
+d-----    20/03/2020  11:30 a. m.                Cisco Packet Tracer 7.2.2
+d-r---    15/03/2020  10:21 a. m.                Contacts
+d-r---     20/03/2020  1:21 a. m.                Desktop
+d-r---    24/03/2020  11:56 p. m.                Documents
+d-r---     20/03/2020  2:15 a. m.                Downloads
+d-r---    15/03/2020  10:21 a. m.                Favorites
+d-----     15/02/2020  9:44 a. m.                ICESI
+d-r---    15/03/2020  10:21 a. m.                Links
+d-r---    15/03/2020  10:21 a. m.                Music
+d-r---     14/03/2020  4:35 p. m.                OneDrive
+d-r---    15/03/2020  10:21 a. m.                Pictures
+d-r---    15/03/2020  10:21 a. m.                Saved Games
+d-r---    15/03/2020  10:21 a. m.                Searches
+d-r---    15/03/2020  10:21 a. m.                Videos
+-a----     15/03/2020  9:49 p. m.            669 .bash_history
+-a----    20/03/2020  11:29 a. m.            186 .packettracer
+-a----    24/03/2020  11:22 p. m.              0 Hola.txt
+-a----     26/02/2020  8:59 a. m.          36294 j.html
+-a----     19/02/2020  4:59 p. m.          80766 prueba.csv
+
+
+PS C:\Users\1144202885> cd .\ICESI
+PS C:\Users\1144202885\ICESI> cd .\Sistemas_Operacionales
+PS C:\Users\1144202885\ICESI\Sistemas_Operacionales> ls 
+
+
+    Directorio: C:\Users\1144202885\ICESI\Sistemas_Operacionales
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----     12/02/2020  8:29 a. m.                Archivos
+d-----     15/03/2020  3:31 p. m.                PowerShell
+-a----      5/02/2020  8:36 a. m.            367 clase2.txt
+
+
+PS C:\Users\1144202885\ICESI\Sistemas_Operacionales> cd .\PowerShell
+PS C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell> ls 
+
+
+    Directorio: C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----     19/02/2020  5:12 p. m.                Clase3
+d-----     15/03/2020  9:48 p. m.                Clase4
+-a----     15/03/2020  3:31 p. m.            421 README.md
+
+
+PS C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell> mkdir Clase5
+
+
+    Directorio: C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----    24/03/2020  11:57 p. m.                Clase5
+
+
+PS C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell> cd .\Clase5
+PS C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell\Clase5> cd ..
+PS C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell> cd  .\Clase3
+PS C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell\Clase3> ls 
+
+
+    Directorio: C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell\Clase3
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----     19/02/2020  5:09 p. m.           7294 eventLog.txt
+-a----     19/02/2020  5:12 p. m.          13106 respuestaClase3.md
+-a----     15/02/2020  9:55 a. m.              0 service2.csv
+-a----    15/02/2020  10:17 a. m.          65049 servicios.csv
+-a----    15/02/2020  10:44 a. m.          65054 servicios2.csv
+-a----     15/02/2020  1:48 p. m.          65071 servicios3.csv
+-a----     19/02/2020  5:01 p. m.          81194 servicios4.csv
+-a----     12/02/2020  8:54 a. m.             54 texto1.txt
+-a----     12/02/2020  8:54 a. m.             52 texto2.txt
+
+
+PS C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell\Clase3> c d..
+c : El término 'c' no se reconoce como nombre de un cmdlet, función, archivo de script o programa ejecutable. Compruebe 
+si escribió correctamente el nombre o, si incluyó una ruta de acceso, compruebe que dicha ruta es correcta e inténtelo 
+de nuevo.
+En línea: 1 Carácter: 1
++ c d..
++ ~
+    + CategoryInfo          : ObjectNotFound: (c:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+c : El término 'c' no se reconoce como nombre de un cmdlet, función, archivo de script o programa
+ejecutable. Compruebe si escribió correctamente el nombre o, si incluyó una ruta de acceso, compruebe
+que dicha ruta es correcta e inténtelo de nuevo.
+En línea: 1 Carácter: 1
++ c d..
++ ~
+    + CategoryInfo          : ObjectNotFound: (c:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell\Clase3> cd ..
+PS C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell> clear
+PS C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell> cd .\Clase5
+PS C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell\Clase5> notepap respuestasClase5.md  
+notepap : El término 'notepap' no se reconoce como nombre de un cmdlet, función, archivo de script o programa 
+ejecutable. Compruebe si escribió correctamente el nombre o, si incluyó una ruta de acceso, compruebe que dicha ruta es 
+correcta e inténtelo de nuevo.
+En línea: 1 Carácter: 1
++ notepap respuestasClase5.md
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (notepap:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+notepap : El término 'notepap' no se reconoce como nombre de un cmdlet, función, archivo de script o
+programa ejecutable. Compruebe si escribió correctamente el nombre o, si incluyó una ruta de acceso,
+compruebe que dicha ruta es correcta e inténtelo de nuevo.
+En línea: 1 Carácter: 1
++ notepap respuestasClase5.md
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (notepap:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell\Clase5> New-Item -ItemType file respuestasClase5.md
+
+
+    Directorio: C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell\Clase5
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----    24/03/2020  11:59 p. m.              0 respuestasClase5.md
+
+
+PS C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell\Clase5> notepad.exe .\respuestasClase5.md
+PS C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell\Clase5> clear
+PS C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell\Clase5> Get-WmiObject win32_network-confifurar la sireccionoaka ebtobee
+>> ErrorTerminación(Get-WmiObject): "No se encuentra ningún parámetro de posición que acepte el argumento 'sireccionoaka'."
+Get-WmiObject : No se encuentra ningún parámetro de posición que acepte el argumento 'sireccionoaka'.
+En línea: 1 Carácter: 1
++ Get-WmiObject win32_network-confifurar la sireccionoaka ebtobee
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-WmiObject], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+Get-WmiObject : No se encuentra ningún parámetro de posición que acepte el argumento 'sireccionoaka'.
+En línea: 1 Carácter: 1
++ Get-WmiObject win32_network-confifurar la sireccionoaka ebtobee
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-WmiObject], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetWmiObjectCom
+   mand
+
+PS C:\Users\1144202885\ICESI\Sistemas_Operacionales\PowerShell\Clase5> Get-WmiObject win32_network-confifuration | Select-Object ip
+Get-WmiObject : Consulta no válida "select * from win32_network-confifuration"
+En línea: 1 Carácter: 1
++ Get-WmiObject win32_network-confifuration | Select-Object ip
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+Get-WmiObject : Consulta no válida "select * from win32_network-confifuration"
+En línea: 1 Carácter: 1
++ Get-WmiObject win32_network-confifuration | Select-Object ip
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectComma
+   nd
+
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20200325005902
+**********************
